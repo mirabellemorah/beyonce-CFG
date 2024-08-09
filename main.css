@@ -1,0 +1,455 @@
+html {
+  height: 100%;
+  font-family: Poppins;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Poppins;
+  background-color: #fff;
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.overlay page-header {
+  height: 100vh;
+  background-image: url("https://img.playbook.com/B0HJtqud92MQuCVFadlBgO9K631QrwfwCUJctdqXkl4/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzlkOTcwZWY2/LTJlNTUtNGM1Yy05/NWEzLTE3NWNjODUw/MDZhMQ");
+}
+
+
+/*start of nav bar*/
+
+.nav_container {
+  position: fixed;
+  /* former fixed or sticky */
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  /* change color or keep transparent */
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /*white*/
+}
+
+.navigation_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo_wrapper {
+  display: inline-block;
+}
+
+.menu-icon {
+  color: white;
+  border-radius: 15px;
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.linkwrapper {
+  display: flex;
+  align-items: center;
+}
+
+.navlink {
+  margin-left: 40px;
+  padding: 5px;
+  transition: color 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: "Poppins", sans-serif;
+  color: rgb(243, 218, 239);
+  font-weight: 400;
+  letter-spacing: 0.56px;
+  text-decoration: none;
+}
+
+.navlink:hover {
+  color: rgb(32, 27, 27);
+  background-color: rgb(243, 218, 239);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .linkwrapper {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 64px;
+    /* Same as the top position of the logo */
+    left: 0;
+    z-index: 9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navlink {
+    margin: 0;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navlink:first-child {
+    border-top: none;
+  }
+}
+
+/*end of nav bar*/
+
+/*Beyonce's image*/
+
+.header {
+  width: 100%;
+  height: 100vh;
+  /* Full viewport height */
+  background-image: url("https://4kwallpapers.com/images/wallpapers/beyonce-vogue-4480x2520-12400.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay h1 {
+  font-size: 10vw;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  color: black;
+  /* Initial color */
+  transition: color 0.5s ease;
+  /* Smooth transition for color change */
+  background: linear-gradient(90deg,
+      white, rgb(251, 250, 229), white, rgb(243, 100, 239), white, white, white);
+  /*(90deg, #ff7e5f, #feb47b, #ff7e5f*/
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s infinite alternate;
+}
+
+.overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Button section */
+
+button {
+  position: relative;
+  font: inherit;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  border-radius: 1em;
+  font-size: 3vh;
+  padding: 0.375em 1em;
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+  transition: 0.25s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  animation: bounce 4s infinite ease;
+
+
+  &:active,
+  &:hover {
+    transform: translateY(0.225em);
+    box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+      0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+      0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+
+    &:after {
+      height: calc(100% + 0.225em);
+    }
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: calc(100% + 0.375em);
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    transition: height 0.25s ease;
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/*end of button section*/
+
+/*start of grainy texture but I have disabled this now. To see it, remove the */
+
+.xpage-header:after {
+  animation: grain 8s steps(10) infinite;
+  background-image: url("https://img.playbook.com/B0HJtqud92MQuCVFadlBgO9K631QrwfwCUJctdqXkl4/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzlkOTcwZWY2/LTJlNTUtNGM1Yy05/NWEzLTE3NWNjODUw/MDZhMQ");
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.3;
+  position: fixed;
+  top: -100%;
+  width: 300%;
+}
+
+@keyframes grain {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+
+  20% {
+    transform: translate(-15%, 5%);
+  }
+
+  30% {
+    transform: translate(7%, -25%);
+  }
+
+  40% {
+    transform: translate(-5%, 25%);
+  }
+
+  50% {
+    transform: translate(-15%, 10%);
+  }
+
+  60% {
+    transform: translate(15%, 0%);
+  }
+
+  70% {
+    transform: translate(0%, 15%);
+  }
+
+  80% {
+    transform: translate(3%, 35%);
+  }
+
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+/*end of grainy effect*/
+
+/*key frames for text color change*/
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes moveRight {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+/*end of text color change*/
+
+
+/*album cards begin here*/
+
+
+.cards-container {
+  font-size: 3vw;
+  display: flex;
+  gap: 5px;
+  /* Space between cards */
+  justify-content: space-between;
+  /* Adjust alignment and spacing */
+  padding: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 50%;
+  /* Set a fixed width for cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: black;
+}
+
+.footercontainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.footercontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footercontainer h3 {
+    color:white;
+    font-family: "poppins, sans-serif";
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 3rem;
+}
+
+.socialicons {
+    display: flex;
+    justify-content: center;
+}
+
+.socialicons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialicons a i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+/* Hover effect for social icons */
+
+.socialicons a:hover {
+    background-color: black;
+    transition: 0.5s;
+}
+
+.socialicons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.socialicons a i:hover {
+    color: white;
+    transition: 0.5s;
+}
+
+.footernav {
+    margin: 30px 0;
+}
+
+.footernav ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footernav ul li a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footernav ul li a:hover {
+    opacity: 1;
+}
+
+.footerbottom {
+    background-color: black;
+    font-family: "poppins, sans-serif";
+    padding: 20px;
+    text-align: center;
+}
+
+.footerbottom p {
+    color: white;
+    font-family: "poppins, sans-serif";
+}
+
+@media (max-width: 600px) {
+    .footernav ul {
+        flex-direction: column;
+    }
+
+    .footernav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+}
